@@ -1,13 +1,44 @@
 package com.logicmojo.java.dsa.hackerrank;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Gives repeating and missing number in an array assuming numbers wil be from 1 to n
  */
 public class MissingAndRepeatingMathematical {
 
     public static void main(String[] args) {
-        int arr[]= {3,1,3};
+        int arr[]= {3,1,2,3,4,5};
+        System.out.println("Input Array:" + Arrays.toString(arr));
+
+        System.out.println("=========Optimised Approach===========");
         findMissingAndRepeating(arr);
+
+        System.out.println("===========Extra space================");
+        findMissingAndRepeatingWithExtraSpace(arr);
+        System.out.println("Duplicate Missing");
+    }
+
+    private static void findMissingAndRepeatingWithExtraSpace(int[] arr) {
+        Map<Integer, Integer> hashMap = new HashMap<>();
+        int duplicateElement = 0, missingElement = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (hashMap.containsValue(arr[i])) {
+                duplicateElement = arr[i];
+            } else {
+                hashMap.put(i, arr[i]);
+            }
+        }
+
+        for (int j = 1; j <= arr.length; j++) {
+            if (!hashMap.containsValue(j)) {
+                missingElement = j;
+                break;
+            }
+        }
+        System.out.println(duplicateElement + " "+ missingElement);
     }
 
     private static void findMissingAndRepeating(int[] arr) {
