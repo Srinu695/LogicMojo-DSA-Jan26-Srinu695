@@ -46,11 +46,11 @@ public class FindMaxSumOfSubArray {
             if(currentSum > maxSum){
                 maxSum = currentSum;
                 end = i ;
-                start = tempStart;
+                start = tempStart;          //Resetting that start pointer only if max sum is found.
             }
             if(currentSum < 0){
                 currentSum = 0;
-                tempStart = i+1;
+                tempStart = i+1; // starting new subarray to find max sum
             }
         }
         System.out.println("===========Kadanes Algorithm SubArray Index============");
