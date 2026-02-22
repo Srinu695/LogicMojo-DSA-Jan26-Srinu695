@@ -1,4 +1,4 @@
-package com.logicmojo.java.dsa.hackerrank;
+package com.logicmojo.java.dsa.hackerrank.arrays;
 
 /**
  * Remove duplicates from sorted ascending array

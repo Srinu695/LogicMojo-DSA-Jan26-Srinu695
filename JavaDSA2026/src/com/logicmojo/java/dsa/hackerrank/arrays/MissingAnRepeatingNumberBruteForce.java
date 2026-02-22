@@ -1,4 +1,4 @@
-package com.logicmojo.java.dsa.hackerrank;
+package com.logicmojo.java.dsa.hackerrank.arrays;
 
 /**
  * Brute Force way to get missing and repeating number from given array 1 to n

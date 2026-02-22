@@ -1,4 +1,4 @@
-package com.logicmojo.java.dsa.hackerrank;
+package com.logicmojo.java.dsa.hackerrank.arrays;
 
 public class MaxConsecutive1sInArray {
 
