@@ -49,9 +49,9 @@ public class Q2MiddleOfLinkedList {
     private static int findSecondMiddleOfLinkedList(Node node) {
         Node fast = node;
         Node slow = node;
-        while(fast!=null && fast.next != null && fast.next.next !=null){
+        while (fast != null && fast.next != null && fast.next.next != null) {
             slow = slow.next;
-            fast =fast.next.next;
+            fast = fast.next.next;
         }
         return slow.data;
     }
