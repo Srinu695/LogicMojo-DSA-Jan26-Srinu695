@@ -9,9 +9,9 @@ import java.util.Map;
 public class Q2FindMaxSubArraySumsToZero {
 
     public static void main(String[] args) {
-        //int arr[] = {-1,3,2,-2,-3,3,-2};
+        int arr[] = {-1,3,2,-2,-3,3,-2};
 
-        int arr[] = {-1,1,2,-2};
+        //int arr[] = {-1,1,2,-2};
 
         System.out.println(MaxSubArraySumsZero(arr));
 
