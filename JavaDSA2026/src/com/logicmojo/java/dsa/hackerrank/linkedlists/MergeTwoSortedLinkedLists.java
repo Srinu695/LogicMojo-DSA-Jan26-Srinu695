@@ -1,7 +1,5 @@
 package com.logicmojo.java.dsa.hackerrank.linkedlists;
 
-import com.logicmojo.java.dsa.linkedlist.LinkedListAddNodeOperations;
-
 public class MergeTwoSortedLinkedLists {
     public static class Node {
         private int data;
