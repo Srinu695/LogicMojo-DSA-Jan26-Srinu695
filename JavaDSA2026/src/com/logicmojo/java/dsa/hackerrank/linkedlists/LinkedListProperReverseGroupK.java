@@ -1,6 +1,6 @@
 package com.logicmojo.java.dsa.hackerrank.linkedlists;
 
-public class LinkedListReverseGroupK {
+public class LinkedListProperReverseGroupK {
 
     public static class Node {
         private int data;
@@ -21,28 +21,37 @@ public class LinkedListReverseGroupK {
         node1.next.next = new Node(3);
         node1.next.next.next = new Node(4);
         node1.next.next.next.next = new Node(8);
-        node1.next.next.next.next.next = new Node(9);
-        node1.next.next.next.next.next.next = new Node(10);
-        node1.next.next.next.next.next.next.next = new Node(11);
+
 
 
         System.out.println("========Initial Linked List: Input============");
         printLinkedList(node1);
         System.out.println("\n========Final Linked List: output============");
-        int k =4;
+        int k =3;
         Node ans2 =reverseLinkedListGroup(node1, k);
         printLinkedList(ans2);
 
 
     }
 
-    private static Node reverseLinkedListGroup(Node node1, int k) {
+    private static Node reverseLinkedListGroup(Node head, int k) {
 
 
-        Node current = node1;
+        Node current = head;
         Node next = null;
         Node prev = null;
         int count = 0;
+        Node temp = head;
+        // This is t verify if input have k nodes to reverse or not.
+        while (temp != null && count < k) {
+            temp = temp.next;
+            count++;
+        }
+        // If we dont have k nodes, we are returning head without reversing
+        if(count < k){
+            return head;
+        }
+        count=0;
         while (current != null && count < k) {
             next = current.next;
             current.next = prev;
@@ -51,11 +60,14 @@ public class LinkedListReverseGroupK {
             count++;
         }
 
+
+
         // 1--> 2-->3-->4-->5-->6-->7-->8
         //(4-->3-->2-->1).next = rev(5->6->7>8)
         //4 3 2 1 8 7 6 5
         if (next != null) {
-            node1.next = reverseLinkedListGroup(next, k);
+            head.next = reverseLinkedListGroup(next, k); // Here we should use head,
+            // as once reversed we need to point head next to reversed list
         }
         return prev;
 
