@@ -2,6 +2,7 @@ package com.logicmojo.java.dsa.arrays.twopointers;
 
 import java.util.Arrays;
 
+//Lecture Jan 24 2026 58:38 - 1:41:20
 public class RemoveDuplicateFromSortedArray {
 
     public static void main(String[] args) {
